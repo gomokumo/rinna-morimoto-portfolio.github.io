@@ -403,7 +403,7 @@ button:hover {
   }
 
   .site-title {
-    font-size: 16px; /* ←正しい対象 */
+    font-size: 16px;
     line-height: 1.0;
     margin-bottom: 8px;
   }
@@ -420,12 +420,14 @@ button:hover {
   }
 
   .work-gallery {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 0;
+    display: grid;
+    grid-template-columns: 1fr; /* 1列に */
+    margin-left: 0; /* サイドナビ分を消す */
+  }
 
   nav.side-nav {
-    display: none; /* スマホでは非表示にしとくと無難 */
+    display: none; /* サイドナビ非表示 */
   }
 }
+
 
