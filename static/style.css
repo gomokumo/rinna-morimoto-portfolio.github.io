@@ -425,6 +425,7 @@ button:hover {
   }
 
   .work-gallery {
+    display: grid;
     margin-left: 0; /* サイドナビ消すため */
     grid-template-columns: 1fr; /* ←コレで1列になる！ */
     padding: 10px;
