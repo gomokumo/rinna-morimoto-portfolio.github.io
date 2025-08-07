@@ -393,11 +393,12 @@ button:hover {
   background: #555;
 }
 
-/* ヘッダースタイルのスマホ対応 */
+/* === スマホ対応スタイル === */
 @media screen and (max-width: 768px) {
-  body{
+  /* 背景確認用：開発時に有効にしておくと便利 */
+  /* body {
     background: pink;
-  }
+  } */
 
   header {
     flex-direction: column;
@@ -424,13 +425,13 @@ button:hover {
   }
 
   .work-gallery {
-    display: grid;
-    grid-template-columns: 1fr; /* 1列に */
-    margin-left: 0; /* サイドナビ分を消す */
+    margin-left: 0; /* サイドナビ消すため */
+    grid-template-columns: 1fr; /* ←コレで1列になる！ */
+    padding: 10px;
   }
 
   nav.side-nav {
-    display: none; /* サイドナビ非表示 */
+    display: none; /* サイドナビはスマホでは非表示 */
   }
 }
 
