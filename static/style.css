@@ -396,13 +396,12 @@ button:hover {
   height: auto;
 }
 
-/* 画面幅が600px以下のスマホ用 */
+/* 600px以下＝スマホの場合 */
 @media screen and (max-width: 600px) {
-  .work-images img {
-    width: 90vw; /* 画面幅の90%を使う */
-    height: auto;
+  #categoryList {
+    display: none;
   }
-
+}
   /* 例えばテキストのサイズも変えたいなら */
   .work-description {
     font-size: 14px;
@@ -418,5 +417,28 @@ button:hover {
 @media screen and (max-width: 600px) {
   .work-gallery {
     display: block;
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap; /* これで折り返せるようにする */
+}
+
+/* タイトルのフォントサイズをスマホ用に調整 */
+@media screen and (max-width: 600px) {
+  .site-title {
+    font-size: 20px; /* 小さくする */
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  .header {
+    flex-direction: column; /* スマホでは縦並びに */
+    align-items: flex-start;
   }
 }
