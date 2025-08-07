@@ -411,7 +411,7 @@ button:hover {
   }
 
   header h1 {
-    font-size: 20px; /* ここでタイトル小さく！ */
+    font-size: 14px; /* ここでタイトル小さく！ */
     line-height: 1.2;
     margin-bottom: 8px;
   }
@@ -423,7 +423,7 @@ button:hover {
   }
 
   .nav a {
-    font-size: 12px; /* works, aboutの文字サイズも調整 */
+    font-size: 8px; /* works, aboutの文字サイズも調整 */
     line-height: 1.5;
     padding: 4px 0;
     justify-content: inline-block;
