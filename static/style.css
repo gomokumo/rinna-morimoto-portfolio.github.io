@@ -390,3 +390,33 @@ button {
 button:hover {
   background: #555;
 }
+/* PCや大きい画面用（基本スタイル） */
+.work-images img {
+  width: 300px;
+  height: auto;
+}
+
+/* 画面幅が600px以下のスマホ用 */
+@media screen and (max-width: 600px) {
+  .work-images img {
+    width: 90vw; /* 画面幅の90%を使う */
+    height: auto;
+  }
+
+  /* 例えばテキストのサイズも変えたいなら */
+  .work-description {
+    font-size: 14px;
+  }
+}
+/* PCは横並び */
+.work-gallery {
+  display: flex;
+  gap: 16px;
+}
+
+/* スマホは縦並び */
+@media screen and (max-width: 600px) {
+  .work-gallery {
+    display: block;
+  }
+}
