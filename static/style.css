@@ -435,10 +435,31 @@ button:hover {
     display: none; /* サイドナビはスマホでは非表示 */
   }
 
-  .work-item img {
-    width: 100%;
-    height: auto;
+
+.work-item {
+    position: static; /* 絶対配置解除 */
+    aspect-ratio: auto; /* 高さ自動 */
+    display: flex;
+    flex-direction: column; /* テキスト→画像の縦並び */
+    border-radius: 0;
   }
+
+  .work-meta {
+    position: static; /* テキストも通常の流れに */
+    background: transparent;
+    color: #333;
+    opacity: 1;
+    transform: none;
+    padding: 0 0 8px 0;
+    font-size: 16px; /* 少し大きくして読みやすく */
+  }
+
+  .work-item img {
+    height: auto;
+    border-radius: 10px;
+    width: 100%;
+  }
+
 
 }
 
