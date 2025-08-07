@@ -460,6 +460,26 @@ button:hover {
     width: 100%;
   }
 
+  .work-detail {
+    flex-direction: column !important;  /* 横並びから縦並びに切替 */
+    margin-left: 0 !important;          /* サイドナビ分のマージンを消す */
+  }
+
+  .work-description {
+    position: static !important;         /* 固定解除して自然な流れに */
+    width: 100% !important;              /* 幅いっぱいに */
+    height: auto !important;             /* 高さ自動 */
+    padding-left: 20px !important;       /* 余白調整 */
+    margin-bottom: 20px !important;      /* 下に余白つけて画像との間隔 */
+  }
+
+  .work-images,
+  .work-images-2,
+  .work-images-3 {
+    margin-left: 0 !important;           /* 余白リセット */
+    width: 100% !important;              /* 幅いっぱい */
+    padding: 0 20px !important;          /* 端に余白 */
+  }
 
 }
 
