@@ -442,3 +442,59 @@ button:hover {
     align-items: flex-start;
   }
 }
+/* 既存の style.css に追加 */
+
+@media screen and (max-width: 768px) {
+  .side-nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* 初期は画面外に隠す */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+  }
+
+  .side-nav.open {
+    left: 0;
+  }
+
+  .category-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .close-category {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* 作品一覧を1列縦並びに */
+  .work-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .work-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
