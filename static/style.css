@@ -145,6 +145,14 @@ nav.side-nav {
   box-sizing: border-box;
 }
 
+/* スマホ版は1列に */
+@media screen and (max-width: 768px) {
+  .work-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .work-item {
   position: relative;
   overflow: hidden;
