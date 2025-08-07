@@ -433,5 +433,11 @@ button:hover {
   nav.side-nav {
     display: none; /* サイドナビはスマホでは非表示 */
   }
+
+  .work-item img {
+    width: 100%;
+    height: auto;
+  }
+
 }
 
