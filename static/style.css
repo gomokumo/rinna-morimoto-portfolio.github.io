@@ -403,8 +403,8 @@ button:hover {
   }
 
   .site-title {
-    font-size: 14px; /* ←正しい対象 */
-    line-height: 1.2;
+    font-size: 10px; /* ←正しい対象 */
+    line-height: 1.0;
     margin-bottom: 8px;
   }
 
@@ -414,14 +414,14 @@ button:hover {
   }
 
   .top-nav a {
-    font-size: 10px;
-    line-height: 1.5;
+    font-size: 8px;
+    line-height: 1.0;
     padding: 4px 0;
   }
 
   .work-gallery {
     display:grid;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
 
   nav.side-nav {
     display: none; /* スマホでは非表示にしとくと無難 */
