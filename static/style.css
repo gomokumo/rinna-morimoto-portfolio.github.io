@@ -417,11 +417,11 @@ button:hover {
 
   .nav {
     flex-wrap: wrap; /* ナビゲーションも折り返せるように */
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
   }
 
   .nav a {
-    font-size: 16px; /* works, aboutの文字サイズも調整 */
+    font-size: 12px; /* works, aboutの文字サイズも調整 */
   }
 }
