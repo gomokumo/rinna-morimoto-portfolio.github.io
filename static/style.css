@@ -148,8 +148,6 @@ nav.side-nav {
 .work-item {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  aspect-ratio: 1 / 1; /* 正方形キープ */
 }
 
 .work-item img {
@@ -158,6 +156,20 @@ nav.side-nav {
   object-fit: cover;
   display: block;
 }
+
+.zoom-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7); /* 白の透かし */
+  background-color: rgba(0, 0, 0, 0.3); /* 黒背景の透かし */
+  padding: 4px;
+  border-radius: 4px;
+  pointer-events: none; /* クリック無効（画像に反応させる） */
+}
+
+
 
 .work-meta {
   position: absolute;
