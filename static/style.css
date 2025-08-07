@@ -145,15 +145,6 @@ nav.side-nav {
   box-sizing: border-box;
 }
 
-/* スマホ版は1列に */
-@media screen and (max-width: 768px) {
-  .work-gallery {
-    display:grid;
-    grid-template-columns: 1fr !important;
-  }
-}
-
-
 .work-item {
   position: relative;
   overflow: hidden;
@@ -427,5 +418,13 @@ button:hover {
     line-height: 1.5;
     padding: 4px 0;
     justify-content: inline-block;
+  }
+}
+
+/* スマホ版は1列に */
+@media screen and (max-width: 768px) {
+  .work-gallery {
+    display:grid;
+    grid-template-columns: 1fr !important;
   }
 }
