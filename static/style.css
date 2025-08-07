@@ -148,6 +148,7 @@ nav.side-nav {
 /* スマホ版は1列に */
 @media screen and (max-width: 768px) {
   .work-gallery {
+    display:grid;
     grid-template-columns: 1fr;
   }
 }
