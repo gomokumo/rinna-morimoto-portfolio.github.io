@@ -412,16 +412,20 @@ button:hover {
 
   header h1 {
     font-size: 20px; /* ここでタイトル小さく！ */
-    margin-bottom: 10px;
+    line-height: 1.2;
+    margin-bottom: 8px;
   }
 
   .nav {
-    flex-wrap: wrap; /* ナビゲーションも折り返せるように */
-    gap: 15px;
-    justify-content: center;
+    display: flex; /* ナビゲーションも折り返せるように */
+    flex-direction: column;
+    gap: 8px;
   }
 
   .nav a {
     font-size: 12px; /* works, aboutの文字サイズも調整 */
+    line-height: 1.5;
+    padding: 4px 0;
+    justify-content: inline-block;
   }
 }
