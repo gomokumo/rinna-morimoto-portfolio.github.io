@@ -233,19 +233,18 @@ nav.side-nav {
 }
 
 /* 右：画像エリア */
+/* ベースに戻すなら、こっちを適用 */
 .work-images {
-  margin-left: 415px; /* 左側の固定スペース + 余白 */
-  margin-right: 10px;
-  padding: 0px; /* 上部はヘッダー考慮 */
-  flex-grow: 1;
+  display: block;
+  margin-left: 0; /* 横スペースが無駄に空いてるならリセット */
 }
 
 .work-images img {
-  width: 100%;
-  max-width: 2000px;
-  margin-bottom: 0px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  width: 100vw;     /* 画面の幅いっぱい */
+  max-width: 100%;  /* 最大でも親幅に収まるように */
+  height: auto;
 }
+
 
 .work-images-2 {
   display: grid;
@@ -389,5 +388,12 @@ button {
 
 button:hover {
   background: #555;
+}
+
+@media screen and (max-width: 600px) {
+  .work-images img {
+    width: 100vw; /* スマホでも横幅いっぱい */
+    height: auto;
+  }
 }
 
