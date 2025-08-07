@@ -169,7 +169,10 @@ nav.side-nav {
   pointer-events: none; /* クリック無効（画像に反応させる） */
 }
 
-
+.zoom-icon i {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+}
 
 .work-meta {
   position: absolute;
