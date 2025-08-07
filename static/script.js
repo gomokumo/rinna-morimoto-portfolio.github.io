@@ -19,16 +19,31 @@ function resizeCanvas() {
   canvas.height = window.innerHeight;
 }
 
+let lastPos = null;
+
 window.addEventListener("mousemove", (e) => {
-  dots.push({ x: e.clientX, y: e.clientY, alpha: 1 });
+  if(lastPos){
+    const dx = e.clientX - lastPos.x;
+    const dy = e.clientY - lastPos.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    const step = 3; // 点同士の距離
+
+    for(let i=0; i < dist; i += step){
+      const x = lastPos.x + (dx * i) / dist;
+      const y = lastPos.y + (dy * i) / dist;
+      dots.push({ x: x, y: y, alpha: 1 });
+    }
+  }
+  lastPos = { x: e.clientX, y: e.clientY };
 });
+
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   dots.forEach(dot => {
-    ctx.fillStyle = `rgba(0,0,0,${dot.alpha})`;
+    ctx.fillStyle = `rgba(150,150,150,${dot.alpha})`;
     ctx.fillRect(dot.x, dot.y, 2, 2); // 小さなピクセル点
-    dot.alpha -= 0.02;
+    dot.alpha -= 0.04;
   });
   dots = dots.filter(dot => dot.alpha > 0);
   requestAnimationFrame(animate);
