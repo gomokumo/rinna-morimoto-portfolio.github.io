@@ -450,30 +450,6 @@ button:hover {
     border-radius: 0;
   }
 
-  .work-meta {
-    position: static !important;
-    opacity: 1 !important;
-    transform: none !important;
-    background: none !important;
-    color: #333 !important;
-    display: block !important;
-    margin-top: 8px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .work-meta .title {
-    display: block;
-    font-weight: bold;
-  }
-
-  .work-meta .category {
-    display: block;
-    color: #888;
-    font-size: 13px;
-  }
-
   .work-item img {
     height: auto;
     border-radius: 10px;
