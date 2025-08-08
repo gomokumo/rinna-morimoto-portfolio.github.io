@@ -457,12 +457,14 @@ button:hover {
   .work-meta .title {
     font-weight: bold;
     display: block;
+    text-align: left;
   }
 
   .work-meta .category {
     color: #888;
     font-size: 13px;
     display: block;
+    text-align: left;
   }
 
   .work-item {
@@ -472,7 +474,6 @@ button:hover {
     flex-direction: column; /* テキスト→画像の縦並び */
     border-radius: 0;
   }
-
 
   .work-item img {
     height: auto;
