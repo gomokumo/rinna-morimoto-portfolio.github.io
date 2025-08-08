@@ -400,11 +400,6 @@ button:hover {
   background: #555;
 }
 
-/* デフォルト（PCなど）では非表示 */
-.work-meta {
-  display: none;
-}
-
 /* === スマホ対応スタイル === */
 @media screen and (max-width: 768px) {
   /* 背景確認用：開発時に有効にしておくと便利 */
@@ -458,7 +453,7 @@ button:hover {
   .work-meta {
     display: block;
     margin-top: 8px;
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     line-height: 1.4;
   }
