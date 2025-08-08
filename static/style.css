@@ -442,13 +442,37 @@ button:hover {
     display: none; /* サイドナビはスマホでは非表示 */
   }
 
-.work-item {
+  .work-meta {
+    position: static;       /* 絶対配置解除して自然な流れに */
+    opacity: 1 !important;  /* 常に表示 */
+    transform: none !important; /* 移動解除 */
+    background: none;       /* 背景色なし（画像下のテキストっぽく） */
+    color: #333;            /* 黒っぽい色に変更 */
+    padding: 8px 0 0 0;     /* 上だけ余白 */
+    width: auto;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .work-meta .title {
+    font-weight: bold;
+    display: block;
+  }
+
+  .work-meta .category {
+    color: #888;
+    font-size: 13px;
+    display: block;
+  }
+
+  .work-item {
     position: static; /* 絶対配置解除 */
     aspect-ratio: auto; /* 高さ自動 */
     display: flex;
     flex-direction: column; /* テキスト→画像の縦並び */
     border-radius: 0;
   }
+
 
   .work-item img {
     height: auto;
