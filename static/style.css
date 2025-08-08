@@ -451,9 +451,14 @@ button:hover {
   }
 
   .work-meta {
-    display: block;
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background: none !important;
+    color: #333 !important;
+    display: block !important;
     margin-top: 8px;
-    text-align: left;
+    text-align: center;
     font-size: 14px;
     line-height: 1.4;
   }
