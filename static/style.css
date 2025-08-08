@@ -400,6 +400,11 @@ button:hover {
   background: #555;
 }
 
+/* デフォルト（PCなど）では非表示 */
+.work-meta {
+  display: none;
+}
+
 /* === スマホ対応スタイル === */
 @media screen and (max-width: 768px) {
   /* 背景確認用：開発時に有効にしておくと便利 */
@@ -442,7 +447,6 @@ button:hover {
     display: none; /* サイドナビはスマホでは非表示 */
   }
 
-
 .work-item {
     position: static; /* 絶対配置解除 */
     aspect-ratio: auto; /* 高さ自動 */
@@ -469,8 +473,6 @@ button:hover {
     color: #888;
     font-size: 13px;
   }
-
-  
 
   .work-item img {
     height: auto;
