@@ -157,23 +157,6 @@ nav.side-nav {
   display: block;
 }
 
-.zoom-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.7); /* 白の透かし */
-  background-color: rgba(0, 0, 0, 0.3); /* 黒背景の透かし */
-  padding: 4px;
-  border-radius: 4px;
-  pointer-events: none; /* クリック無効（画像に反応させる） */
-}
-
-.zoom-icon i {
-  font-size: 18px;
-  color: rgba(255,255,255,0.7);
-}
-
 .work-meta {
   position: absolute;
   left: 0;
@@ -194,6 +177,23 @@ nav.side-nav {
   transform: translateY(0);
 }
 
+
+.zoom-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7); /* 白の透かし */
+  background-color: rgba(0, 0, 0, 0.3); /* 黒背景の透かし */
+  padding: 4px;
+  border-radius: 4px;
+  pointer-events: none; /* クリック無効（画像に反応させる） */
+}
+
+.zoom-icon i {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+}
 
 /* 6. works各作品ページ */
 .work-detail {
