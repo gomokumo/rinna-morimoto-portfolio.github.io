@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 拡大表示
-  document.querySelectorAll(".work-images img").forEach(img => {
+  document.querySelectorAll(".work-images img, .work-images-2 img, .work-images-3 img").forEach(img => {
     img.addEventListener("click", () => {
       modal.style.display = "flex";
       modalImg.src = img.src;
