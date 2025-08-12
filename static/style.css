@@ -150,6 +150,10 @@ nav.side-nav {
   overflow: hidden;
   border-radius: 12px !important; /* !important で強制 */
   aspect-ratio: 1 / 1 !important;
+  display: flex;
+  align-items: center; /* 縦方向の中央揃え */
+  justify-content: center; /* 横方向の中央揃えもしたいなら */
+
 }
 
 .work-gallery .work-item img {
