@@ -195,10 +195,34 @@ nav.side-nav {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.work-item {
+  position: relative; /* 子要素の絶対配置用 */
+}
+
+.zoom-icon {
+  position: absolute;
+  bottom: 8px;   /* 下端から8px */
+  right: 8px;    /* 右端から8px */
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0; /* 初期は非表示 */
+  transition: opacity 0.2s ease;
+}
+
+.work-item:hover .zoom-icon {
+  opacity: 1; /* hover時に表示 */
+}
+
 .work-item:hover .work-meta {
   opacity: 1;
   transform: translateY(0);
 }
+
+
 
 
 /* 6. works各作品ページ */
