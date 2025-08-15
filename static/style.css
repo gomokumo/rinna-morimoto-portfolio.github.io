@@ -92,6 +92,8 @@ header {
 
 .top-nav a.current {
   font-weight: bold;
+  pointer-events: none; /* ←クリックもhoverも無効化 */
+  cursor: default;      /* マウスカーソルを矢印に */
 }
 
 
