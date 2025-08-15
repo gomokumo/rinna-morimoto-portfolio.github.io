@@ -90,6 +90,11 @@ header {
   color: rgb(171, 171, 171);
 }
 
+.top-nav a.current {
+  font-weight: bold;
+}
+
+
 /* 4. サイドのカテゴリタブ */
 nav.side-nav {
   position: fixed;
