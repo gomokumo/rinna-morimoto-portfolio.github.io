@@ -76,6 +76,22 @@ if (categoryList) {
   });
 }
 
+// すべての作品画像に拡大アイコンを追加
+document.querySelectorAll('.work-images img').forEach(img => {
+  // アイコン用のspanを作成
+  const icon = document.createElement('span');
+  icon.className = 'material-symbols-outlined zoom-icon';
+  icon.textContent = 'zoom_in';
+
+  // 画像をラッパーdivで囲む
+  const wrapper = document.createElement('div');
+  wrapper.className = 'image-wrapper';
+  
+  img.parentNode.insertBefore(wrapper, img); // 画像の前にwrapperを挿入
+  wrapper.appendChild(img); // 画像をwrapperに移動
+  wrapper.appendChild(icon); // アイコンもwrapperに追加
+});
+
 
 // モーダル表示処理
 // 画像クリックでモーダル表示
