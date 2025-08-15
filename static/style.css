@@ -2,28 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
 
 body {
-  font-family: "Lexend Exa", sans-serif;
+  font-family:  "Lexend Exa", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  padding: 80px 20px 20px 20px; /* ヘッダー分 + サイド余白 */
+
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 20px;
   background-color: #f8f8f8;
+
+  padding-top: 80px; /* ←ヘッダー60px＋余白20px */
+  padding-left: 20px;
+  padding-right: 20px;
   box-sizing: border-box;
 }
 
-p {
+p{
   font-size: 12px;
   line-height: 2;
   text-align: justify;
   text-justify: inter-ideograph;
 }
-
-h4 {
+h4{
   font-size: 12px;
   font-weight: 500;
-  margin: 40px 0 10px 0;
+  margin-top: 40px;
+  margin-bottom: 10px;
   color: darkgray;
-  line-height: 1.8;
+  line-height:1.8;
 }
 
 /* 1. ヘッダー */
@@ -36,25 +44,29 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px 0 50px;
+  padding-left: 50px;
+  padding-right: 40px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
-  box-sizing: border-box;
+  box-sizing: border-box; /* 余白込みでサイズ計算 */
   overflow: visible;
 }
 
+/* 2. ヘッダー左のタイトル */
 .site-title {
   font-size: 20px;
   font-weight: bold;
-  white-space: nowrap;
+  white-space: nowrap; /* 改行しない */
 }
 
+/* 3. ヘッダー右のナビ */
 .top-nav {
   display: flex;
   gap: 24px;
+  /* 幅いっぱいに広げる */
   flex-grow: 1;
   justify-content: flex-end;
-  overflow: hidden;
+  overflow: hidden; /* はみ出し防止 */
 }
 
 .top-nav ul {
@@ -63,7 +75,7 @@ header {
   padding: 0;
   margin: 0;
   gap: 24px;
-  white-space: nowrap;
+  white-space: nowrap; /* 折り返さず */
 }
 
 .top-nav a {
@@ -71,6 +83,7 @@ header {
   color: #333;
   font-weight: 500;
   transition: color 0.2s ease;
+  white-space: nowrap; /* 改行しない */
 }
 
 .top-nav a:hover {
@@ -79,27 +92,33 @@ header {
 
 .top-nav a.current {
   font-weight: bold;
-  pointer-events: none;
+  pointer-events: none; /* クリック無効 */
   cursor: default;
-  color: #333;
+  color: #333; /* hover時の色変化を打ち消す用 */
 }
 
+/* currentにはhoverを適用しない */
 .top-nav a.current:hover {
-  color: #333;
+  color: #333; /* 通常色に固定 */
 }
 
-/* 2. サイドカテゴリタブ */
+
+
+/* 4. サイドのカテゴリタブ */
 nav.side-nav {
   position: fixed;
-  top: 60px;
+  top: 60px; /* ヘッダーの下に */
   left: 0;
   width: 240px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 60px); /* ヘッダー分引く */
   background: white;
-  padding: 40px 80px 0 40px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 80px;
   overflow-y: auto;
   z-index: 999;
   box-sizing: border-box;
+  /* 画面全体に広がらないように念押し */
   max-width: 240px;
 }
 
@@ -112,7 +131,7 @@ nav.side-nav {
 #categoryList li {
   padding: 8px 0;
   cursor: pointer;
-  text-align: left;
+  text-align: left; /* 左揃え */
   border-bottom: 1px solid #eee;
   user-select: none;
   color: #333;
@@ -128,9 +147,11 @@ nav.side-nav {
   color: #111;
 }
 
-/* 3. ギャラリー */
+
+
+/* 5. メインコンテンツ部分（ギャラリー） */
 .work-gallery {
-  margin-left: 240px;
+  margin-left: 240px; /* サイドバーの幅+余白 */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -138,31 +159,33 @@ nav.side-nav {
   box-sizing: border-box;
 }
 
-.work-item {
+.work-gallery .work-item {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  aspect-ratio: 1 / 1;
+  border-radius: 12px !important; /* !important で強制 */
+  aspect-ratio: 1 / 1 !important;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* 縦方向の中央揃え */
+  justify-content: center; /* 横方向の中央揃えもしたいなら */
+
 }
 
-.work-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
+.work-gallery .work-item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: inherit !important;
   display: block;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
+
 
 .work-meta {
   position: absolute;
   left: 0;
   bottom: 0;
   padding: 8px 12px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   width: 100%;
   box-sizing: border-box;
@@ -177,50 +200,72 @@ nav.side-nav {
   transform: translateY(0);
 }
 
-/* 4. アイコン（JSで追加する .zoom-icon に統一） */
-.zoom-icon {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  color: white;
-  background: rgba(0,0,0,0.6);
+.work-item {
+  position: relative; /* 子要素の絶対配置用 */
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24; /* サイズ調整 */
+  color: white;       /* アイコン色 */
+  background: rgba(0,0,0,0.6); /* 背景半透明 */
   padding: 4px 6px;
   border-radius: 4px;
   cursor: pointer;
-  opacity: 0;
+  position: absolute; /* 絶対配置 */
+  bottom: 8px;
+  right: 8px;
+  opacity: 0;         /* hover前は非表示 */
   transition: opacity 0.2s ease;
-  pointer-events: none;
 }
 
-.work-item:hover .zoom-icon {
-  opacity: 1;
+.work-item:hover .material-symbols-outlined {
+  opacity: 1; /* hoverで表示 */
 }
 
-/* 5. works各作品ページ */
+/* 6. works各作品ページ */
 .work-detail {
   display: flex;
   min-height: 100vh;
-  margin-left: 40px;
+  margin-left: 40px; /* 左側の固定スペース */
 }
 
+/* 左：作品説明 */
 .work-description {
   position: fixed;
-  top: 60px;
+  top: 60px; /* ヘッダーがあるならそれを考慮 */
   left: 0;
   width: 400px;
   height: calc(100vh - 60px);
   background: white;
   padding-left: 50px;
+  
+
   overflow-y: auto;
   z-index: 999;
 }
 
-.work-description h2 { font-size: 24px; margin: 40px 0 10px 0; }
-.work-description h3 { font-size: 18px; margin-bottom: 10px; color: rgb(200,200,200); }
-.work-description p { font-size: 14px; margin-top: 25px; width: 84%; }
+.work-description h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
 
-.back-link {
+.work-description h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgb(200, 200, 200);
+}
+
+.work-description p {
+  font-size: 14px;
+  margin-top: 25px;
+  width: 84%;
+}
+.back-link{
   display: inline-block;
   margin-top: 120px;
   font-size: 14px;
@@ -230,26 +275,61 @@ nav.side-nav {
 }
 
 .back-link:hover {
-  color: rgb(171,171,171);
+  color: rgb(171, 171, 171);
 }
 
-/* 6. works画像エリア */
-.work-images,
-.work-images-2,
+/* 右：画像エリア */
+/* ベースに戻すなら、こっちを適用 */
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 36px;
+  pointer-events: none; /* アイコンがクリックを邪魔しない */
+}
+.image-wrapper:hover .zoom-icon {
+  color: rgba(255, 255, 255, 1);
+}
+
+.work-images {
+  margin-left: 415px; /* 左側の固定スペース + 余白 */
+  margin-right: 10px;
+  padding: 0px; /* 上部はヘッダー考慮 */
+  flex-grow: 1;
+}
+.work-images-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 415px; /* 左側の固定スペース + 余白 */
+  margin-right: 10px;
+  padding: 0px; /* 上部はヘッダー考慮 */
+  flex-grow: 1;
+}
+
 .work-images-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-left: 415px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 415px; /* 左側の固定スペース + 余白 */
   margin-right: 10px;
-  padding: 0;
+  padding: 0px; /* 上部はヘッダー考慮 */
   flex-grow: 1;
-  gap: 20px;
 }
 
-.work-images img {
+.work-images img,
+.work-images-2 img,
+.work-images-3 img {
   width: 100%;
   max-width: 2000px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
@@ -263,18 +343,29 @@ nav.side-nav {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,0.9);
-  padding-top: 30px;
+
+  /* flexは入れない */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+
+  /* 代わりにpadding-topでヘッダー分空ける */
+  padding-top: 30px; /* ヘッダーの高さ分 */
+
+  /* 画像の中央寄せは中のimgで調整 */
   text-align: center;
 }
 
+/* 画像の中央寄せ＆最大サイズ調整 */
 .modal-content {
   max-width: 95vw;
-  max-height: calc(100vh - 60px);
+  max-height: calc(100vh - 60px); /* ヘッダー分を除く高さ */
   width: auto;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto; /* 横中央 */
   object-fit: contain;
-  display: inline-block;
+  border-radius: 0;
+  display: inline-block; /* text-alignの中央寄せを有効に */
 }
 
 /* 閉じるボタン */
@@ -289,20 +380,171 @@ nav.side-nav {
   z-index: 10000;
 }
 
-#image-modal-close:hover { color: #bbb; }
+#image-modal-close:hover {
+  color: #bbb;
+}
 
-/* === スマホ対応 === */
+
+/* 7. aboutページ */
+.about-section {
+  max-width: 800px;
+  padding-left: 20px;
+}
+
+.about-section img {
+  width: 60%;
+  max-width: 320px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  
+}
+
+/* 8. contactフォーム */
+.contact-section {
+  margin-left: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-top: 60px; /* ヘッダーの下に余白 */
+}
+
+label {
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+input,
+textarea {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background: #333;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* === スマホ対応スタイル === */
 @media screen and (max-width: 768px) {
-  header { flex-direction: column; align-items: center; padding: 10px; }
-  .site-title { font-size: 16px; margin-bottom: 8px; }
-  .top-nav { flex-direction: column; gap: 8px; }
-  .top-nav a { font-size: 12px; padding: 4px 0; }
-  nav.side-nav { display: none; }
-  .work-gallery { margin-left: 0; grid-template-columns: 1fr; padding: 10px; }
-  .work-item { position: static; aspect-ratio: auto; display: flex; flex-direction: column; border-radius: 0; }
-  .work-item img { width: 100%; height: auto; border-radius: 10px; }
-  .work-meta { position: static; opacity: 1 !important; transform: none !important; background: none; color: #333; padding: 8px 0 0 0; width: auto; font-size: 14px; text-align: center; }
-  .work-detail { flex-direction: column !important; margin-left: 0 !important; }
-  .work-description { position: static !important; width: 100% !important; height: auto !important; padding-left: 20px !important; margin-bottom: 20px !important; }
-  .work-images, .work-images-2, .work-images-3 { margin-left: 0 !important; width: 100% !important; padding: 0 20px !important; }
+  /* 背景確認用：開発時に有効にしておくと便利 */
+  /* body {
+    background: pink;
+  } */
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .site-title {
+    font-size: 16px;
+    line-height: 1.0;
+    margin-bottom: 8px;
+  }
+
+  .top-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-nav a {
+    font-size: 12px;
+    line-height: 1.0;
+    padding: 4px 0;
+  }
+
+  .work-gallery {
+    display: grid;
+    margin-left: 0; /* サイドナビ消すため */
+    grid-template-columns: 1fr; /* ←コレで1列になる！ */
+    padding: 10px;
+  }
+
+  nav.side-nav {
+    display: none; /* サイドナビはスマホでは非表示 */
+  }
+
+  .work-meta {
+    position: static;       /* 絶対配置解除して自然な流れに */
+    opacity: 1 !important;  /* 常に表示 */
+    transform: none !important; /* 移動解除 */
+    background: none;       /* 背景色なし（画像下のテキストっぽく） */
+    color: #333;            /* 黒っぽい色に変更 */
+    padding: 8px 0 0 0;     /* 上だけ余白 */
+    width: auto;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .work-meta .title {
+    font-weight: bold;
+    display: block;
+    text-align: left;
+  }
+
+  .work-meta .category {
+    color: #888;
+    font-size: 13px;
+    display: block;
+    text-align: left;
+  }
+
+  .work-item {
+    position: static; /* 絶対配置解除 */
+    aspect-ratio: auto; /* 高さ自動 */
+    display: flex;
+    flex-direction: column; /* テキスト→画像の縦並び */
+    border-radius: 0;
+  }
+
+  .work-item img {
+    height: auto;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .work-detail {
+    flex-direction: column !important;  /* 横並びから縦並びに切替 */
+    margin-left: 0 !important;          /* サイドナビ分のマージンを消す */
+  }
+
+  .work-description {
+    position: static !important;         /* 固定解除して自然な流れに */
+    width: 100% !important;              /* 幅いっぱいに */
+    height: auto !important;             /* 高さ自動 */
+    padding-left: 20px !important;       /* 余白調整 */
+    margin-bottom: 20px !important;      /* 下に余白つけて画像との間隔 */
+  }
+
+  .work-images,
+  .work-images-2,
+  .work-images-3 {
+    margin-left: 0 !important;           /* 余白リセット */
+    width: 100% !important;              /* 幅いっぱい */
+    padding: 0 20px !important;          /* 端に余白 */
+  }
+
 }
