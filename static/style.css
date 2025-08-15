@@ -281,21 +281,23 @@ nav.side-nav {
 /* 右：画像エリア */
 /* ベースに戻すなら、こっちを適用 */
 
-.zoom-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.7); /* 白の透かし */
-  background-color: rgba(0, 0, 0, 0.3); /* 黒背景の透かし */
-  padding: 4px;
-  border-radius: 4px;
-  pointer-events: none; /* クリック無効（画像に反応させる） */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
 }
 
-.zoom-icon i {
-  font-size: 18px;
-  color: rgba(255,255,255,0.7);
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 36px;
+  pointer-events: none; /* アイコンがクリックを邪魔しない */
+}
+.image-wrapper:hover .zoom-icon {
+  color: rgba(255, 255, 255, 1);
 }
 
 .work-images {
