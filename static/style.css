@@ -92,9 +92,16 @@ header {
 
 .top-nav a.current {
   font-weight: bold;
-  pointer-events: none; /* ←クリックもhoverも無効化 */
-  cursor: default;      /* マウスカーソルを矢印に */
+  pointer-events: none; /* クリック無効 */
+  cursor: default;
+  color: #333; /* hover時の色変化を打ち消す用 */
 }
+
+/* currentにはhoverを適用しない */
+.top-nav a.current:hover {
+  color: #333; /* 通常色に固定 */
+}
+
 
 
 /* 4. サイドのカテゴリタブ */
