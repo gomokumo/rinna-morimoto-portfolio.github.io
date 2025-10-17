@@ -523,22 +523,39 @@ button:hover {
       flex-direction: column !important;  /* 横並び→縦並び */
       margin-left: 0 !important;          /* サイドマージン解除 */
     }
-
+    /* ==============================
+      worksページ全体背景を白に統一
+      ============================== */
     .work-description {
       width: 100% !important;             /* 幅いっぱい */
       position: static !important;        /* 固定解除 */
       height: auto !important;            /* 高さ自動 */
       padding-left: 20px !important;      /* 左余白 */
       margin-bottom: 20px !important;     /* 下余白 */
+      background-color: #f8f8f8 !important;
+    }
+    .work-description p {
+      font-size: 18px;
+      margin-top: 25px;
+      width: 84%;
     }
 
     .work-images,
     .work-images-2,
     .work-images-3 {
-      width: 100% !important;             /* 幅いっぱい */
-      margin-left: 0 !important;          /* 余白リセット */
-      padding: 0 20px !important;         /* 端余白 */
+      width: 100% !important;        /* 幅いっぱいに */
+      margin: 0 auto !important;     /* 左右中央揃え */
+      padding: 0 20px !important;    /* 横余白は必要に応じて */
+      text-align: center;            /* 内部の画像も中央 */
     }
+
+    .work-images img,
+    .work-images-2 img,
+    .work-images-3 img {
+      display: inline-block;         /* 中央揃え用 */
+      margin: 0 auto;                /* 自動余白で中央 */
+      max-width: 100%;               /* 親幅に収める */
+      height: auto;
 
     .work-item {
       flex-direction: column;             /* テキスト→画像の縦並び */
@@ -670,11 +687,10 @@ button:hover {
     margin-top: 8px;
     padding: 0;
   }
-
   .top-nav a {
     text-decoration: none;
     color: #000;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: 0.2s;
   }
@@ -682,6 +698,37 @@ button:hover {
   .top-nav a:hover {
     color: #888;
   }
+
+  /* ==============================
+   worksページのスマホヘッダー調整
+   ============================== */
+@media screen and (max-width: 768px) {
+  /* ヘッダー内ラッパー */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    text-align: center;
+  }
+
+  /* タイトル */
+  .site-title a {
+    font-size: 1.4rem;  /* index.htmlと同じ大きさに */
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 8px;
+  }
+
+  /* ナビゲーション */
+  .top-nav a {
+    font-size: 1rem;    /* index.htmlと同じ大きさに */
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+  }
+}
 
   /* === メニューボタン === */
   .menu-toggle {
@@ -691,5 +738,4 @@ button:hover {
     font-size: 1.4rem;
     cursor: pointer;
   }
-
-}
+}}
