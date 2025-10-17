@@ -517,31 +517,61 @@ button:hover {
     opacity: 0.85;
   }
 
-  /* === 詳細ページ === */
-  .work-detail {
-    flex-direction: column !important;  /* 横並び → 縦並び */
-    margin-left: 0 !important;
-  }
+  /* ==== worksページ：スマホ表示 ==== */
+  @media screen and (max-width: 768px) {
+    .work-detail {
+      flex-direction: column !important;  /* 横並び→縦並び */
+      margin-left: 0 !important;          /* サイドマージン解除 */
+    }
 
-  .work-description {
-    position: static !important;        /* 固定解除 */
-    width: 100% !important;
-    height: auto !important;
-    padding-left: 20px !important;
-    margin-bottom: 20px !important;
-  }
+    .work-description {
+      width: 100% !important;             /* 幅いっぱい */
+      position: static !important;        /* 固定解除 */
+      height: auto !important;            /* 高さ自動 */
+      padding-left: 20px !important;      /* 左余白 */
+      margin-bottom: 20px !important;     /* 下余白 */
+    }
 
-  .work-images,
-  .work-images-2,
-  .work-images-3 {
-    width: 100% !important;
-    margin-left: 0 !important;
-    padding: 0 20px !important;
-  }
+    .work-images,
+    .work-images-2,
+    .work-images-3 {
+      width: 100% !important;             /* 幅いっぱい */
+      margin-left: 0 !important;          /* 余白リセット */
+      padding: 0 20px !important;         /* 端余白 */
+    }
 
-  .img-wrapper {
-    position: relative;
-    display: inline-block;
+    .work-item {
+      flex-direction: column;             /* テキスト→画像の縦並び */
+      position: static;                   /* 絶対配置解除 */
+      aspect-ratio: auto;                 /* 高さ自動 */
+    }
+
+    .work-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .work-meta {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      opacity: 1 !important;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      padding: 0.6em 1em;
+    }
+
+    .work-meta .title {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .work-meta .category {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
   }
 
   /* === モバイルカテゴリプルダウン === */
