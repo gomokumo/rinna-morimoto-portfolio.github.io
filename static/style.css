@@ -464,7 +464,7 @@ button:hover {
 /* =========================================================
    📱 スマホ表示用スタイル（768px以下）
    ========================================================= */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 980px) {
 
   /* === ギャラリー全体 === */
   .work-gallery {
@@ -518,7 +518,6 @@ button:hover {
   }
 
   /* ==== worksページ：スマホ表示 ==== */
-  @media screen and (max-width: 1500px) {
     .work-detail {
       flex-direction: column !important;  /* 横並び→縦並び */
       margin-left: 0 !important;          /* サイドマージン解除 */
@@ -676,7 +675,6 @@ button:hover {
     display: flex;
     justify-content: center;
   }
-
   .top-nav ul {
     list-style: none;
     display: flex;
@@ -690,53 +688,11 @@ button:hover {
   .top-nav a {
     text-decoration: none;
     color: #000;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 500;
     transition: 0.2s;
   }
-
   .top-nav a:hover {
     color: #888;
   }
-
-  /* ==============================
-   worksページのスマホヘッダー調整
-   ============================== */
-@media screen and (max-width: 768px) {
-  /* ヘッダー内ラッパー */
-  .header-inner {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 0;
-    text-align: center;
-  }
-
-  /* タイトル */
-  .site-title a {
-    font-size: 1.4rem;  /* index.htmlと同じ大きさに */
-    font-weight: 700;
-    color: #000;
-    text-decoration: none;
-    margin-bottom: 8px;
-  }
-
-  /* ナビゲーション */
-  .top-nav a {
-    font-size: 1rem;    /* index.htmlと同じ大きさに */
-    font-weight: 500;
-    color: #000;
-    text-decoration: none;
-  }
 }
-
-  /* === メニューボタン === */
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-  }
-}}
-
