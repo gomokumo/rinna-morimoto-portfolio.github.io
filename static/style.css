@@ -547,4 +547,51 @@ button:hover {
     padding: 0 20px !important;          /* 端に余白 */
   }
 
+  .img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.zoom-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.img-wrapper:hover .zoom-icon {
+  opacity: 1;
+}
+
+
+  /* ===== モバイルカテゴリプルダウン ===== */
+/* スマホ用カテゴリセレクトの初期状態は非表示 */
+.mobile-category {
+  display: none;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.mobile-category select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* スマホ時にセレクト表示・サイドメニュー非表示 */
+@media screen and (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+  .mobile-category {
+    display: block;
+  }
+}
 }
