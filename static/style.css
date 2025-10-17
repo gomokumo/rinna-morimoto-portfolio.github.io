@@ -464,7 +464,7 @@ button:hover {
 /* =========================================================
    📱 スマホ表示用スタイル（768px以下）
    ========================================================= */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1500px) {
 
   /* === ギャラリー全体 === */
   .work-gallery {
@@ -518,7 +518,7 @@ button:hover {
   }
 
   /* ==== worksページ：スマホ表示 ==== */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1500px) {
     .work-detail {
       flex-direction: column !important;  /* 横並び→縦並び */
       margin-left: 0 !important;          /* サイドマージン解除 */
