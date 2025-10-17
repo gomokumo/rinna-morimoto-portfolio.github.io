@@ -461,19 +461,41 @@ button:hover {
   background: #555;
 }
 
-/* === スマホ表示時 === */
+/* =========================================================
+   📱 スマホ表示用スタイル（768px以下）
+   ========================================================= */
 @media screen and (max-width: 768px) {
+
+  /* === ギャラリー全体 === */
   .work-gallery {
     margin-left: 0;
     grid-template-columns: 1fr;
     padding: 10px;
+    padding-top: 0; /* 上余白を調整 */
   }
 
-  nav.side-nav {
+  /* === サイドナビ非表示 === */
+  nav.side-nav,
+  .side-nav {
     display: none;
   }
 
-  /* 画像の上に重ねて常時表示 */
+  /* === 作品カード === */
+  .work-item {
+    position: static;                 /* 絶対配置を解除 */
+    aspect-ratio: auto;               /* 高さを自動に */
+    display: flex;
+    flex-direction: column;           /* テキスト→画像の縦並び */
+    border-radius: 0;
+  }
+
+  .work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* === 作品メタ情報（タイトルやカテゴリ） === */
   .work-meta {
     position: absolute;
     bottom: 0;
@@ -494,99 +516,129 @@ button:hover {
     font-size: 0.85rem;
     opacity: 0.85;
   }
-  .work-item {
-    position: static; /* 絶対配置解除 */
-    aspect-ratio: auto; /* 高さ自動 */
-    display: flex;
-    flex-direction: column; /* テキスト→画像の縦並び */
-    border-radius: 0;
-  }
 
-  .work-item img {
-    height: auto;
-    border-radius: 10px;
-    width: 100%;
-  }
-
+  /* === 詳細ページ === */
   .work-detail {
-    flex-direction: column !important;  /* 横並びから縦並びに切替 */
-    margin-left: 0 !important;          /* サイドナビ分のマージンを消す */
+    flex-direction: column !important;  /* 横並び → 縦並び */
+    margin-left: 0 !important;
   }
 
   .work-description {
-    position: static !important;         /* 固定解除して自然な流れに */
-    width: 100% !important;              /* 幅いっぱいに */
-    height: auto !important;             /* 高さ自動 */
-    padding-left: 20px !important;       /* 余白調整 */
-    margin-bottom: 20px !important;      /* 下に余白つけて画像との間隔 */
+    position: static !important;        /* 固定解除 */
+    width: 100% !important;
+    height: auto !important;
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
   }
 
   .work-images,
   .work-images-2,
   .work-images-3 {
-    margin-left: 0 !important;           /* 余白リセット */
-    width: 100% !important;              /* 幅いっぱい */
-    padding: 0 20px !important;          /* 端に余白 */
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 20px !important;
   }
 
   .img-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-  /* ===== モバイルカテゴリプルダウン ===== */
-/* スマホ用カテゴリセレクトの初期状態は非表示 */
-.mobile-category {
-  display: none;
-  text-align: center;
-  margin: 16px 0;
-}
-
-.mobile-category select {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-/* === スマホ用カテゴリプルダウン === */
-#categorySelect {
-  display: block;
-  width: 96%;
-  margin: 0 auto 1em auto;
-  padding: 0.6em 1em;
-  border: none;
-  background: #fff;
-  color: #333;
-  font-size: 1rem;
-  font-family: inherit;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  appearance: none; /* デフォルト矢印を消す */
-  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 1em center;
-  background-size: 1em;
-}
-
-/* 画像左端に揃えるため、上のmargin調整 */
-.work-gallery {
-  padding-top: 0;
-}
-
-/* スマホ時にセレクト表示・サイドメニュー非表示 */
-@media screen and (max-width: 768px) {
-  .side-nav {
-    display: none;
+    position: relative;
+    display: inline-block;
   }
+
+  /* === モバイルカテゴリプルダウン === */
   .mobile-category {
     display: block;
-  }
-  /* ==== スマホ用メニュー ==== */
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
+    text-align: center;
+    margin: 16px 0;
   }
 
+  .mobile-category select,
+  #categorySelect {
+    display: inline-block;
+    width: 95%;
+    margin-top: 4px;
+    padding: 0.6em 1em;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #333;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    background-size: 1em;
+    margin: 0 auto;              /* ← これで中央揃え */
+  }
+
+  /* === ヘッダー === */
+  header {
+    width: 100%;
+    height: auto !important;
+    padding: 12px 0 !important;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    text-align: center;
+  }
+
+  /* === サイトタイトル === */
+  .site-title a {
+    font-size: 1.2rem !important;  /* ← ここでスマホ時の文字サイズ調整！ */
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  /* === ナビゲーション === */
+  .top-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    padding: 0;
+  }
+
+  .top-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  .top-nav a:hover {
+    color: #888;
+  }
+
+  /* === メニューボタン === */
   .menu-toggle {
     display: block;
     background: none;
@@ -595,92 +647,4 @@ button:hover {
     cursor: pointer;
   }
 
-  header {
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-/* 内側ラッパーを縦方向に並べる */
-.header-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 0;
-  text-align: center;
-}
-
-/* タイトル */
-.site-title a {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #000;
-  text-decoration: none;
-  margin-bottom: 8px;
-}
-
-/* ナビゲーション */
-.top-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin: 0;
-  padding: 0;
-}
-
-.top-nav a {
-  text-decoration: none;
-  color: #000;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: 0.2s;
-}
-
-.top-nav a:hover {
-  color: #888;
-}
-
-/* ==== ヘッダー：スマホ用 ==== */
-@media screen and (max-width: 768px) {
-  header {
-    height: auto !important;          /* 高さ固定解除 */
-    flex-direction: column !important; /* 縦並びに変更 */
-    align-items: center !important;    /* 中央寄せ */
-    justify-content: center;
-    padding: 16px 0 !important;        /* 上下に余白確保 */
-    text-align: center;
-  }
-
-  .site-title {
-    margin-bottom: 8px;                /* タイトルとナビの間隔 */
-    font-size: 1.0rem;
-  }
-
-  .top-nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .top-nav ul {
-    flex-direction: row;
-    justify-content: center;
-    gap: 26px;
-    flex-wrap: wrap;
-  }
-
-  .top-nav a {
-    font-size: 14px;
-  }
-}
-
-
-}
-}
 }
