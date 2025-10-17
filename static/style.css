@@ -180,25 +180,42 @@ nav.side-nav {
 }
 
 
+/* 🔸作品タイトルと説明（PC & スマホ対応） */
 .work-meta {
   position: absolute;
-  left: 0;
   bottom: 0;
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  left: 0;
   width: 100%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 0.6em 1em;
   box-sizing: border-box;
-  font-size: 14px;
+  text-align: left; /* ← 左端に揃える */
+  white-space: normal; /* 改行OK */
+  overflow: visible; /* 見切れ防止 */
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
+.work-meta .title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  word-break: break-word; /* 長い単語対応 */
+}
+
+.work-meta .category {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 0.3em;
+}
+
+/* ホバーでフェードイン（PC用） */
 .work-item:hover .work-meta {
   opacity: 1;
-  transform: translateY(0);
 }
+
 
 .work-item {
   position: relative; /* 子要素の絶対配置用 */
@@ -445,72 +462,40 @@ button:hover {
   background: #555;
 }
 
-/* === スマホ対応スタイル === */
+/* === スマホ表示時 === */
 @media screen and (max-width: 768px) {
-  /* 背景確認用：開発時に有効にしておくと便利 */
-  /* body {
-    background: pink;
-  } */
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .site-title {
-    font-size: 16px;
-    line-height: 1.0;
-    margin-bottom: 8px;
-  }
-
-  .top-nav {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .top-nav a {
-    font-size: 12px;
-    line-height: 1.0;
-    padding: 4px 0;
-  }
-
   .work-gallery {
-    display: grid;
-    margin-left: 0; /* サイドナビ消すため */
-    grid-template-columns: 1fr; /* ←コレで1列になる！ */
+    margin-left: 0;
+    grid-template-columns: 1fr;
     padding: 10px;
   }
 
   nav.side-nav {
-    display: none; /* サイドナビはスマホでは非表示 */
+    display: none;
   }
 
+  /* 画像の上に重ねて常時表示 */
   .work-meta {
-    position: static;       /* 絶対配置解除して自然な流れに */
-    opacity: 1 !important;  /* 常に表示 */
-    transform: none !important; /* 移動解除 */
-    background: none;       /* 背景色なし（画像下のテキストっぽく） */
-    color: #333;            /* 黒っぽい色に変更 */
-    padding: 8px 0 0 0;     /* 上だけ余白 */
-    width: auto;
-    font-size: 14px;
-    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1 !important;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 0.6em 1em;
   }
 
   .work-meta .title {
-    font-weight: bold;
-    display: block;
-    text-align: left;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
   .work-meta .category {
-    color: #888;
-    font-size: 13px;
-    display: block;
-    text-align: left;
+    font-size: 0.85rem;
+    opacity: 0.85;
   }
+}
 
   .work-item {
     position: static; /* 絶対配置解除 */
@@ -593,5 +578,4 @@ button:hover {
   .mobile-category {
     display: block;
   }
-}
 }
