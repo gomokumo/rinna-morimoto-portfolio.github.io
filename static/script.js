@@ -72,6 +72,42 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.style.display = "none";
   });
+    // --- 前後移動機能 ---
+  const modalPrev = document.getElementById("modal-prev");
+  const modalNext = document.getElementById("modal-next");
+  const images = Array.from(document.querySelectorAll(".work-images img"));
+  let currentIndex = -1;
+
+  // 画像クリック時
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentIndex = index;
+      modalImg.src = img.src;
+      modal.style.display = "flex";
+    });
+  });
+
+  function showImage(index) {
+    if (index >= 0 && index < images.length) {
+      currentIndex = index;
+      modalImg.src = images[currentIndex].src;
+    }
+  }
+
+  if (modalPrev) {
+    modalPrev.addEventListener("click", (e) => {
+      e.stopPropagation(); // 背景クリック判定を無効化
+      showImage(currentIndex - 1);
+    });
+  }
+
+  if (modalNext) {
+    modalNext.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showImage(currentIndex + 1);
+    });
+  }
+
 
   // --- カテゴリ関連 ---
   const categoryList = document.querySelectorAll("#categoryList li");
