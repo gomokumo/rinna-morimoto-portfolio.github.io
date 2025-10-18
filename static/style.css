@@ -553,7 +553,7 @@ button:hover {
       display: inline-block;
       margin-top: 120px;
       margin-bottom: 40px; /* 下に余白を追加！ */
-      font-size: 24px;
+      font-size: 16px;
       color: #333;
       text-decoration: none;
       transition: color 0.2s ease;
