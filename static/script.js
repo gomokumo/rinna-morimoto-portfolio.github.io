@@ -73,10 +73,6 @@ if (modal) {
 
 
 // ============================
-// 📁 カテゴリフィルタ + モーダル
-// ============================
-document.addEventListener("DOMContentLoaded", () => {
-// ============================
 // 📁 モーダル（画像拡大表示）
 // ============================
 document.addEventListener("DOMContentLoaded", () => {
@@ -138,7 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-  // --- カテゴリ関連 ---
+// ============================
+// カテゴリ
+// ============================
   const categoryList = document.querySelectorAll("#categoryList li");
   const categorySelect = document.getElementById("categorySelect");
   const workItems = document.querySelectorAll(".work-item");
