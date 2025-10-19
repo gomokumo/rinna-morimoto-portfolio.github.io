@@ -317,10 +317,14 @@ nav.side-nav {
 }
 
 .work-images {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
   margin-left: 415px; /* 左側の固定スペース + 余白 */
   margin-right: 10px;
   padding: 0px; /* 上部はヘッダー考慮 */
   flex-grow: 1;
+  
 }
 .work-images-2 {
   display: grid;
@@ -343,6 +347,9 @@ nav.side-nav {
 .work-images img,
 .work-images-2 img,
 .work-images-3 img {
+  position: relative;
+  cursor: zoom-in;
+  transition: transform 0.3s;
   width: 100%;
   max-width: 2000px;
   margin-bottom: 0px;
@@ -358,7 +365,17 @@ nav.side-nav {
   transform: scale(1.05);
 }
 
-
+/* アイコンを右下に重ねる */
+.work-images img::after {
+  content: url('https://cdn-icons-png.flaticon.com/512/60/60740.png'); /* 任意のアイコンURL */
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 20px;   /* アイコンサイズ調整 */
+  height: 20px;
+  opacity: 0.7;
+  pointer-events: none; /* クリックを邪魔しない */
+}
 
 /* ---------------------------
    モーダル（中央寄せ）＋左右ナビ
