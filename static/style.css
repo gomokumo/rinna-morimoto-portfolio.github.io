@@ -360,6 +360,7 @@ nav.side-nav {
 .work-images-2 img,
 .work-images-3 img {
   cursor: zoom-in; /* 拡大できることを示す */
+  transform-origin: left center; /* ←拡大の基準を左端に固定 */
   transition: transform 0.3s; /* なめらかに拡大 */
 }
 
@@ -637,13 +638,14 @@ button:hover {
     .work-images,
     .work-images-2,
     .work-images-3 {
+      margin-left: 0;      /* ← PCの415pxをリセット */
+      margin-right: 0;
       display: flex;
       flex-direction: column; /* 縦に並べる */
       align-items: center;    /* 中央寄せ */
       gap: 16px;              /* 画像間の余白 */
       padding: 0 16px;        /* 端に少し余白 */
       width: 100% !important;        /* 幅いっぱいに */
-      margin: 0 auto !important;     /* 左右中央揃え */
     }
 
     .work-images img,
