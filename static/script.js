@@ -36,20 +36,7 @@ window.addEventListener("mousemove", (e) => {
   }
   lastPos = { x: e.clientX, y: e.clientY };
 });
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  dots.forEach((dot) => {
-    ctx.fillStyle = `rgba(150,150,150,${dot.alpha})`;
-    ctx.fillRect(dot.x, dot.y, 2, 2);
-    dot.alpha -= 0.04;
-  });
-  dots = dots.filter((dot) => dot.alpha > 0);
-  requestAnimationFrame(animate);
-}
-animate();
-
-let trailPaused = false;
+let trailPaused = false; // まず宣言
 
 function animate() {
   if (!trailPaused) {
@@ -63,7 +50,9 @@ function animate() {
   }
   requestAnimationFrame(animate);
 }
-animate();
+
+animate(); // 宣言・定義の後に呼び出す
+
 
 // モーダル開閉で一時停止
 if (modal) {
