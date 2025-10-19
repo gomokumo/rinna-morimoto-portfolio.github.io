@@ -363,8 +363,8 @@ nav.side-nav {
   transition: transform 0.3s; /* なめらかに拡大 */
 }
 
-.work-images img,
-.work-images-2 img,
+.work-images img:hover,
+.work-images-2 img:hover,
 .work-images-3 img:hover {
   transform: scale(1.05);
 }
