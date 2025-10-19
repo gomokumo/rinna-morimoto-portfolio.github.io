@@ -563,7 +563,7 @@ button:hover {
   /* ==== worksページ：スマホ表示 ==== */
     .work-detail {
       flex-direction: column !important;  /* 横並び→縦並び */
-      margin-right: 20px !important;          /* サイドマージン解除 */
+      margin-right: 10px !important;          /* サイドマージン解除 */
       text-align: left !important;
     }
     /* ==============================
