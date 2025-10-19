@@ -392,18 +392,18 @@ nav.side-nav {
 
 /* 左右ナビボタン（共通） */
 .modal-nav {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: none; /* ← 背景なし */
-  border: none; /* 枠もなし */
-  color: #fff; /* 白い線文字 */
-  font-size: 46px; /* 少し大きめにしてバランス調整 */
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.2s ease;
-  z-index: 10000; /* 閉じるボタンと同等の層に */
+  padding: 0.3em 0.6em;
+  transition: background 0.2s;
 }
 
 /* 左右位置 */
@@ -412,8 +412,12 @@ nav.side-nav {
 
 /* ホバー時の淡い変化 */
 .modal-nav:hover {
-  color: #bbb;
+  background: rgba(0, 0, 0, 0.5);
 }
+
+
+#modal-prev { left: 20px; }
+#modal-next { right: 20px; }
 
 /* スマホ表示用に少しサイズ調整 */
 @media screen and (max-width: 768px) {

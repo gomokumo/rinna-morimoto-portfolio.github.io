@@ -49,6 +49,29 @@ function animate() {
 }
 animate();
 
+let trailPaused = false;
+
+function animate() {
+  if (!trailPaused) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dots.forEach((dot) => {
+      ctx.fillStyle = `rgba(150,150,150,${dot.alpha})`;
+      ctx.fillRect(dot.x, dot.y, 2, 2);
+      dot.alpha -= 0.04;
+    });
+    dots = dots.filter((dot) => dot.alpha > 0);
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+// モーダル開閉で一時停止
+if (modal) {
+  modal.addEventListener("show", () => trailPaused = true);
+  modal.addEventListener("hide", () => trailPaused = false);
+}
+
+
 // ============================
 // 📁 カテゴリフィルタ + モーダル
 // ============================
@@ -62,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closeBtn.addEventListener("click", () => (modal.style.display = "none"));
   }
 
-  document.querySelectorAll(".work-images img").forEach((img) => {
+  document.querySelectorAll(".work-images img, .work-images-2 img, .work-images-3 img").forEach((img) => {
     img.addEventListener("click", () => {
       modal.style.display = "flex";
       modalImg.src = img.src;
