@@ -564,6 +564,7 @@ button:hover {
     .work-detail {
       flex-direction: column !important;  /* 横並び→縦並び */
       margin-left: 0 !important;          /* サイドマージン解除 */
+      text-align: center !important;
     }
     /* ==============================
       worksページ全体背景を白に統一
