@@ -76,50 +76,55 @@ if (modal) {
 // 📁 カテゴリフィルタ + モーダル
 // ============================
 document.addEventListener("DOMContentLoaded", () => {
-  // --- モーダル関連 ---
+  // ============================
+// 📁 モーダル（画像拡大表示）
+// ============================
+document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   const closeBtn = document.getElementById("image-modal-close");
+  const modalPrev = document.getElementById("modal-prev");
+  const modalNext = document.getElementById("modal-next");
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => (modal.style.display = "none"));
-  }
+  // 対象画像をすべて取得（work-images, work-images-2, work-images-3）
+  const images = Array.from(
+    document.querySelectorAll(".work-images img, .work-images-2 img, .work-images-3 img")
+  );
 
-  document.querySelectorAll(".work-images img, .work-images-2 img, .work-images-3 img").forEach((img) => {
+  let currentIndex = -1;
+
+  // --- 画像クリックでモーダルを開く ---
+  images.forEach((img, index) => {
     img.addEventListener("click", () => {
       modal.style.display = "flex";
       modalImg.src = img.src;
+      currentIndex = index;
     });
   });
 
+  // --- モーダルを閉じる ---
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+  // --- 背景クリックで閉じる ---
   modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.style.display = "none";
   });
-    // --- 前後移動機能 ---
-  const modalPrev = document.getElementById("modal-prev");
-  const modalNext = document.getElementById("modal-next");
-  const images = Array.from(document.querySelectorAll(".work-images img"));
-  let currentIndex = -1;
 
-  // 画像クリック時
-  images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-      currentIndex = index;
-      modalImg.src = img.src;
-      modal.style.display = "flex";
-    });
-  });
-
+  // --- 前後ボタン ---
   function showImage(index) {
-    if (index >= 0 && index < images.length) {
-      currentIndex = index;
-      modalImg.src = images[currentIndex].src;
-    }
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    currentIndex = index;
+    modalImg.src = images[currentIndex].src;
   }
 
   if (modalPrev) {
     modalPrev.addEventListener("click", (e) => {
-      e.stopPropagation(); // 背景クリック判定を無効化
+      e.stopPropagation();
       showImage(currentIndex - 1);
     });
   }
@@ -130,6 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
       showImage(currentIndex + 1);
     });
   }
+});
+
 
 
   // --- カテゴリ関連 ---
