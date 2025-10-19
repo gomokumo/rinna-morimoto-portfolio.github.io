@@ -163,4 +163,3 @@ document.addEventListener("DOMContentLoaded", () => {
       filterWorks(e.target.value);
     });
   }
-});
