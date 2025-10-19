@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display="flex";
       modalImg.src = img.src;
       currentIndex = index;
-      trailPaused = true; // モーダル開いたら停止
+      //trailPaused = true;  モーダル開いたら停止
     });
   });
 
