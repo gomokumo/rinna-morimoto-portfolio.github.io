@@ -348,6 +348,18 @@ nav.side-nav {
   margin-bottom: 0px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
+/* 画像にカーソルヒント + 少し拡大 */
+.work-images img {
+  cursor: zoom-in; /* 拡大できることを示す */
+  transition: transform 0.3s; /* なめらかに拡大 */
+}
+
+.work-images img:hover {
+  transform: scale(1.05);
+}
+
+
+
 /* ---------------------------
    モーダル（中央寄せ）＋左右ナビ
    --------------------------- */
