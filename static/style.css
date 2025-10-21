@@ -147,7 +147,9 @@ nav.side-nav {
   color: #111;
 }
 
-
+.mobile-category {
+  display: none;
+}
 
 /* 5. メインコンテンツ部分（ギャラリー） */
 .work-gallery {
