@@ -655,7 +655,10 @@ button:hover {
       margin: 0 auto;                /* 自動余白で中央 */
       max-width: 100%;               /* 親幅に収める */
       height: auto;
-
+    }
+    .work-images img:hover {
+      transform: none;
+    }
     .work-item {
       flex-direction: column;             /* テキスト→画像の縦並び */
       position: static;                   /* 絶対配置解除 */
