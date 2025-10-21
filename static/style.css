@@ -147,10 +147,6 @@ nav.side-nav {
   color: #111;
 }
 
-.mobile-category {
-  display: none;
-}
-
 /* 5. メインコンテンツ部分（ギャラリー） */
 .work-gallery {
   margin-left: 240px; /* サイドバーの幅+余白 */
@@ -539,6 +535,27 @@ button {
 button:hover {
   background: #555;
 }
+
+/* CSSのいちばん最後あたり（button {...}の下など）にこれを追加！ */
+
+.mobile-category {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-category {
+    display: block !important;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 8px 0;
+  }
+
+  .side-nav {
+    display: none !important;
+  }
+}
+
 
 /* =========================================================
    📱 スマホ表示用スタイル（768px以下）
